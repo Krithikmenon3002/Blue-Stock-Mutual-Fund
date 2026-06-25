@@ -26,3 +26,12 @@ df.to_csv(
 )
 
 print("Performance cleaned successfully!")
+
+print(df["expense_ratio_pct"].describe())
+
+invalid = df[
+    (df["expense_ratio_pct"] < 0.1) |
+    (df["expense_ratio_pct"] > 2.5)
+]
+
+print(invalid)

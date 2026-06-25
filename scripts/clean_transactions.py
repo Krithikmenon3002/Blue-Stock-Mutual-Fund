@@ -22,3 +22,10 @@ df.to_csv(
 )
 
 print("Transactions cleaned successfully!")
+
+# Check KYC values
+print(df["kyc_status"].value_counts())
+
+valid_kyc = ["Verified", "Pending"]
+
+df = df[df["kyc_status"].isin(valid_kyc)]
